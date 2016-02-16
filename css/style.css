@@ -1,0 +1,408 @@
+/*
+Theme Name: Plaza del Mariachi
+Theme URL: http://
+Author: Agencia Mixen
+Author URL: http://mixen.mx/
+Description: Tema para el sitio de Plaza del Mariachi.
+Version: 1.0
+Text Domain: Mixen Communication & Web Technology
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600,500);
+
+/*** GENERAL STYLES ***/
+body {
+	overflow-x: hidden!important;
+	width: 100%;
+}
+
+.wrapper {
+	min-height: 100%!important;
+	width: 100%;
+	/*margin-top: 96px;*/
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+textarea {
+	resize: none;
+}
+
+.spacing {
+	padding: 100px 15px;
+}
+
+.vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+/*
+.slimScrollBar {
+display: none!important;
+}*/
+
+h3.header {
+	font-size: 43px;
+	font-family: 'PT Serif', serif;
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+
+h1.header {
+	font-size: 150px;
+	font-family: 'Great Vibes', cursive;
+	color: #e49f73;
+	line-height: 10px;
+}
+
+.text {
+	font-size: 16px;
+	line-height: 30px;
+	font-family: 'Raleway', sans-serif;
+	color: #636362;
+}
+
+.text-justify {
+	text-align-last: center;
+}
+
+.gold {
+	color: #e49f73;
+}
+
+.brown {
+	color: #673512;
+}
+
+.white {
+	color: #fff;
+}
+
+.scroll-nosotros:hover {
+	cursor: pointer;
+}
+/*** GENERAL STYLES ***/
+
+/*** NAVBAR **/
+.navbar {
+	height: 96px;
+	background-color: #e49f73;
+	width: 100%;
+	/*max-width: 970px;*/
+	margin: 0 auto;
+	border: 0;
+	/*opacity: 0;
+	transition: all 0.5s ease;*/
+	border-radius: 0;
+}
+
+.navbar .container-fluid {
+	max-width: 970px;
+}
+
+.show-nav {
+	/*opacity: 1;*/
+}
+
+.navbar-brand {
+	height: 96px;
+	background-color: #fff!important;
+	position: absolute;
+	z-index: 1;
+	padding-top: 10px;
+}
+
+.navbar-collapse {
+	float: none;
+	text-align: center;
+}
+
+.navbar-nav {
+	padding-left: 162px;
+	float: none;
+}
+
+.navbar-nav>li {
+	float: none;
+	display: inline-block;
+	height: 96px;
+	z-index: 1;
+}
+
+.navbar-nav>li>a {
+	color: #ffffff!important;
+}
+
+.navbar-toggle {
+	z-index: 100;
+}
+
+.navbar .overlay {
+	position: absolute;
+	height: 96px;
+	top: 0;
+	width: 100%;
+	background: url(../img/banner/overlay.png) no-repeat;
+	background-size: cover;
+	right: 0!important;
+	opacity: .35;
+}
+/*** NAVBAR **/
+
+/*** BANNER **/
+.banner {
+	background: url(../img/banner/bg.png);
+	display: block;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.banner .overlay {
+	background: url(../img/banner/overlay.png) no-repeat center;
+	background-size: cover;
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	opacity: .35;
+}
+
+.banner img {
+	height: 100vh;
+}
+
+.banner .chevron-down {
+	position: absolute;
+	z-index: 25;
+	bottom: 25px;
+	margin-left: calc( 50% - 35px );
+	height: 70px;
+}
+/*** BANNER **/
+
+/*** NOSOTROS ***/
+.nosotros {
+	padding-top: 196px;
+	overflow: hidden;
+}
+
+.nosotros h1 {
+	margin-left: -180px;
+}
+
+.nosotros h3 {
+	margin-left: 60px;
+}
+
+.nosotros .col-sm-8 {
+	z-index: 1;
+}
+
+.nosotros .col-sm-4 img{
+	position: absolute;
+	margin-top: -202px;
+	width: 40vw;
+	z-index: -1;
+}
+/*** NOSOTROS ***/
+
+/*** SERVICIOS ***/
+.galeria {
+	position: relative;
+	background: #fff;
+	text-align: center;
+}
+
+.galeria::before, .galeria::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+}
+
+.galeria .row {
+	max-width: 1170px;
+	margin: 0 auto;
+}
+
+.galeria .col-sm-4 {
+	padding: 5px;
+}
+/*** SERVICIOS ***/
+
+/*** CONTACTO **/
+.contacto input[type=text], .contacto textarea {
+	width: 100%;
+	border: 1px solid #412311;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	min-height: 50px;
+}
+
+.contacto .col-sm-6:first-child {
+	padding-right: 7.5px;
+}
+
+.contacto .col-sm-6:nth-child(2) {
+	padding-left: 7.5px;
+}
+
+.contacto textarea {
+	padding-top: 15px;
+}
+.contacto input[type=submit] {
+	border: 0;
+	background-color: #422513;
+	height: 50px;
+	width: 135px;
+	font-family: 'PT Serif';
+	font-size: 18px;
+}
+/*** CONTACTO **/
+
+/*** MAPA ***/
+.googleMap {
+	height: 420px;
+}
+
+.googleMap {
+	position: relative;
+	background: #fff;
+	text-align: center;
+}
+
+.googleMap::before, .googleMap::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+}
+/*** MAPA ***/
+
+/*** FOOTER ***/
+.footer-top {
+	height: 310px;
+}
+
+.footer-top img {
+	max-width: 90%;
+}
+
+.footer-top a {
+	margin-top: 25px;
+}
+
+.footer-rights p {
+	margin: 0;
+}
+
+.footer-rights {
+	background-color: #422513;
+	padding: 10px;
+}
+
+.footer-rights a {
+	color: #e3e3e3;
+}
+
+.footer-rights a:hover,
+.footer-rights a:focus {
+	color: #a3a3a3;
+	text-decoration: none;
+}
+/*** FOOTER ***/
+
+/*** Parallax CSS ****/
+.parallax-container {
+	position: relative;
+	overflow: hidden;
+	min-height: 490px;
+	height: auto;
+}
+
+.parallax {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1; 
+}
+
+.parallax img {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	min-width: 1920px;
+	width: 100%;
+	background-position: center; 
+}
+
+#sonMariachi .container {
+	height: 490px;
+}
+
+#sonMariachi h1 {
+	margin-left: -180px;
+}
+
+#sonMariachi h3 {
+	margin-left: 80px;
+}
+/*** DOUBLE DIAGONAL ***/
+.ss-style-doublediagonal {
+	z-index: 100;
+	background: #fff;
+}
+
+.ss-style-doublediagonal::before,
+.ss-style-doublediagonal::after {
+	top: 0;
+	left: -25%;
+	z-index: -1;
+	width: 150%;
+	height: 75%;
+	background: inherit;
+	transform: rotate(-2deg);
+	transform-origin: 0 0;
+}
+
+
+.ss-style-doublediagonal-inverse::before,
+.ss-style-doublediagonal-inverse::after {
+	transform: rotate(2deg);
+	top: -325px;
+	z-index: 10;
+	background: #fff;
+}
+
+@media(max-width: 992px) {
+	.navbar a {
+		font-size: 11.5px;
+	}
+}
+
+@media(max-width: 767px) {
+	.navbar-brand {
+		position: relative;
+		height: 50px;
+		padding-top: 0;
+	}
+	.navbar .overlay {
+		height: 50px;
+	}
+	.navbar-brand img {
+		height: 48px;
+		padding-top: 1px;
+	}
+}
