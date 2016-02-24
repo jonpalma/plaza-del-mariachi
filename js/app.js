@@ -35,7 +35,7 @@ $(document).ready(function() {
 		INITIALIZES SCROLL REVEAL JS
 	*/
 	window.sr = ScrollReveal();
-	sr.reveal('.reveal', { 
+	sr.reveal('.reveal-left', { 
 		origin: 'left', 
 		duration: 2000, 
 		delay: 300,
@@ -49,7 +49,14 @@ $(document).ready(function() {
 		distance: '300px',
 		reset: false
 	} );
-	
+	sr.reveal('.reveal', {
+		origin: 'top',
+		duration: 2000, 
+		delay: 300,
+		distance: '300px',
+		reset: false
+	} );
+
 	console.log(parseInt($('.navbar').css('height').substring(0 , $('.navbar').css('height').indexOf('p'))));
 });
 
@@ -57,9 +64,16 @@ $(document).ready(function() {
 	SCROLLS TO DIV WITH ID "NOSOTROS"
 */
 $('.scroll-nosotros').click(function () {
+	if($('#nosotros').length != 0 ) {
+		$scroll_to = $('#nosotros');
+	} else {
+
+	} if($('#about').length != 0 ) {
+		$scroll_to = $('#about');
+	}
 	$('html, body').stop().animate({
-		'scrollTop': $('#nosotros').offset().top
-	}, 800, 'swing' ); 
+		'scrollTop': $scroll_to.offset().top
+	}, 800, 'swing' );
 });
 
 /*
@@ -80,3 +94,28 @@ $( '.ha-waypoint' ).each( function(i) {
 		}
 	}, { offset: '0' } );
 } );
+
+$(window).scroll(function() {
+	if( $('.ha-header').hasClass('ha-header-hide') ) {
+		$('.navbar-collapse').removeClass('in').attr('aria-expanded','false');
+		$('.navbar-toggle').addClass('collapsed').attr('aria-expanded','false');
+	}
+});
+
+/* PAGE LOAD WITH HASH OFFSET */
+(function($, window) {
+	var adjustAnchor= function() {
+		var $anchor = $(':target'),
+			fixedElementHeight = 96;
+		if ($anchor.length > 0) {
+			$('html, body')
+				.stop()
+				.animate({
+				scrollTop: $anchor.offset().top - fixedElementHeight
+			}, 800);
+		}
+	};
+	$(window).on('hashchange load', function() {
+		adjustAnchor();
+	});
+})(jQuery, window);

@@ -11,11 +11,17 @@ Text Domain: Mixen Communication & Web Technology
 @import url(https://fonts.googleapis.com/css?family=Great+Vibes);
 @import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600,500);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700);
 
 /*** GENERAL STYLES ***/
 body {
 	overflow-x: hidden!important;
-	width: 100%;
+	width: 100vw;
+}
+
+.big-wrapper {
+	overflow-x: hidden;
+	width: 100vw;
 }
 
 .wrapper {
@@ -64,7 +70,11 @@ h1.header {
 	font-size: 150px;
 	font-family: 'Great Vibes', cursive;
 	color: #e49f73;
-	line-height: 10px;
+	line-height: 22px;
+}
+
+h1.header-line-height {
+	line-height: 35px!important;
 }
 
 .text {
@@ -87,18 +97,22 @@ h1.header {
 }
 
 .white {
-	color: #fff;
+	color: #fff!important;
 }
 
 .scroll-nosotros:hover {
 	cursor: pointer;
+}
+
+.lg-backdrop.in, .lg-outer {
+	width: 100vw;
 }
 /*** GENERAL STYLES ***/
 
 /*** NAVBAR **/
 .navbar {
 	height: 96px;
-	background-color: #e49f73;
+	background-color: #673512;
 	width: 100%;
 	/*max-width: 970px;*/
 	margin: 0 auto;
@@ -106,14 +120,18 @@ h1.header {
 	/*opacity: 0;
 	transition: all 0.5s ease;*/
 	border-radius: 0;
+	position: relative;
+}
+
+.navbar .white-bg {
+	position: absolute;
+	height: 100%;
+	width: 25vw;
+	background-color: #fff;
 }
 
 .navbar .container-fluid {
 	max-width: 970px;
-}
-
-.show-nav {
-	/*opacity: 1;*/
 }
 
 .navbar-brand {
@@ -127,11 +145,14 @@ h1.header {
 .navbar-collapse {
 	float: none;
 	text-align: center;
+	padding-right: 0;
 }
 
 .navbar-nav {
-	padding-left: 162px;
+	padding-left: 132px;
 	float: none;
+	margin: 0!important;
+	padding-right: 0;
 }
 
 .navbar-nav>li {
@@ -139,10 +160,35 @@ h1.header {
 	display: inline-block;
 	height: 96px;
 	z-index: 1;
+	/*width: 100%;*/
+	/*max-width: calc(14.28% - 3.4px);*/
+	-webkit-transition: background-color 100ms ease-out;
+	-moz-transition: background-color 100ms ease-out;
+	-o-transition: background-color 100ms ease-out;
+	transition: background-color 100ms ease-out;
+	padding: 0 .9px;
+}
+
+.navbar-nav>li:hover {
+	background-color: #ca9a7c;
+}
+.navbar-nav>li:hover:before {
+	content: '';
+	position: absolute;
+	background: url(../img/restaurantes/galeria/overlay.png) no-repeat;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: .3;
 }
 
 .navbar-nav>li>a {
 	color: #ffffff!important;
+	height: 100%;
+	line-height: 62px;
+	font-family: 'PT Serif', sans-serif;
 }
 
 .navbar-toggle {
@@ -150,23 +196,25 @@ h1.header {
 }
 
 .navbar .overlay {
-	position: absolute;
+	/*position: absolute;
 	height: 96px;
 	top: 0;
-	width: 100%;
+	width: 100vw;
 	background: url(../img/banner/overlay.png) no-repeat;
-	background-size: cover;
+	background-position: right;
 	right: 0!important;
-	opacity: .35;
+	opacity: .35;*/
 }
 /*** NAVBAR **/
 
 /*** BANNER **/
 .banner {
-	background: url(../img/banner/bg.png);
+	/*background: url(../img/banner/bg.png);*/
+	background-color: #000;
 	display: block;
 	height: 100vh;
 	overflow: hidden;
+	position: relative;
 }
 
 .banner .overlay {
@@ -190,12 +238,40 @@ h1.header {
 	margin-left: calc( 50% - 35px );
 	height: 70px;
 }
+
+.banner .caption {
+	position: absolute;
+	top: calc(50% - 176px);
+	height: 352px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 1;
+}
+
+.banner h1 {
+	font-size: 18vw;
+	line-height: 10px;
+}
+
+.banner h3 {
+	font-family: 'Playfair Display', sans-serif;
+	font-weight: 400;
+	font-size: 4vw;
+	margin-left: -23vw;
+	margin-top: 7vw;
+	text-shadow: 1px 1px rgba(0,0,0,.2),
+		-1px -1px rgba(0,0,0,.2),
+		-1px 1px rgba(0,0,0,.2),
+		1px -1px rgba(0,0,0,.2);
+}
 /*** BANNER **/
 
 /*** NOSOTROS ***/
 .nosotros {
 	padding-top: 196px;
 	overflow: hidden;
+	position: relative;
 }
 
 .nosotros h1 {
@@ -225,6 +301,10 @@ h1.header {
 	text-align: center;
 }
 
+.galeria .main-header h3 {
+	margin-right: -200px;
+}
+
 .galeria::before, .galeria::after {
 	position: absolute;
 	content: '';
@@ -239,6 +319,61 @@ h1.header {
 .galeria .col-sm-4 {
 	padding: 5px;
 }
+
+.galeria a {
+	max-width: 588px;
+	max-height: 378px;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.galeria .brown-overlay, .galeria .overlay {
+	position: absolute;
+	height: calc( 100% - 10px);
+	width: calc( 100% - 10px);
+	top: 5px;
+	left: 5px;
+	-webkit-transition: opacity 500ms ease-in-out;
+	-moz-transition: opacity 500ms ease-in-out;
+	-o-transition: opacity 500ms ease-in-out;
+	transition: opacity 500ms ease-in-out;
+	background: url(../img/galeria/overlay.jpg) no-repeat;
+	opacity: 0;
+}
+
+.galeria .overlay {
+	background: url(../img/restaurantes/galeria/overlay.png) no-repeat;
+	opacity: .4;
+}
+
+.galeria .brown-overlay:hover {
+	opacity: 1;
+}
+
+.galeria .overlay:hover {
+	opacity: .8;
+}
+
+.galeria .brown-overlay h1 {
+	font-size: 95px;
+}
+
+.galeria .brown-overlay h3 {
+	font-size: 28px;
+}
+
+.galeria li {
+	list-style: none;
+}
+/*
+.galeria .brown-overlay:hover {
+background-color: #412311;
+}
+
+.galeria borwn-overlay:hover {
+background: url(../img/banner/overlay.png) no-repeat;
+}*/
 /*** SERVICIOS ***/
 
 /*** CONTACTO **/
@@ -289,13 +424,85 @@ h1.header {
 }
 /*** MAPA ***/
 
+/*** RESTURANTES ***/
+/*** BANNER ***/
+.restaurantes .banner {
+	background: url(../img/banner/restaurantes.jpg) no-repeat center center;
+	background-size: cover;
+	background-position: top;
+}
+
+.restaurantes .caption {
+	height: 50vh;
+	top: 25vh;
+}
+
+.restaurantes .banner .caption-img {
+	width: auto;
+	height: auto;
+	margin-bottom: -50px;
+}
+
+.restaurantes .banner .header {
+	line-height: normal;
+	font-size: 200px;
+	margin-top: 20px!important;
+}
+/*** BANNER ***/
+
+/*** NUESTROS RESTAURANTES ***/
+.about {
+	overflow: hidden;
+	position: relative;
+}
+
+.about .reveal-right {
+	position: absolute;
+	width: 50vw;
+	right: 0;
+	bottom: -25px;
+}
+
+.about img {
+	min-width: 100%;
+}
+
+.about h1 {
+	margin-right: 60px;
+}
+.about h3 {
+	margin-left: 100px;
+}
+/*** NUESTROS RESTAURANTES ***/
+
+/*** MARCAS ***/
+.marcas {
+	background-color: rgba(228, 159, 115, 0.77);
+}
+.marcas .col-sm-2 {
+	height: 160px;
+	text-align: center;
+}
+/*** MARCAS ***/
+
+/*** GALERÍA ***/
+.restaurantes .galeria {
+	padding-bottom: 0!important;	
+}
+
+.restaurantes .galeria .main-header h1 {
+	line-height: normal!important;
+}
+/*** GALERÍA ***/
+/*** RESTURANTES ***/
+
 /*** FOOTER ***/
 .footer-top {
 	height: 310px;
 }
 
 .footer-top img {
-	max-width: 90%;
+	max-width: 80%;
 }
 
 .footer-top a {
@@ -345,7 +552,8 @@ h1.header {
 	bottom: 0;
 	min-width: 1920px;
 	width: 100%;
-	background-position: center; 
+	background-position: center;
+	right: 0;
 }
 
 #sonMariachi .container {
@@ -377,7 +585,6 @@ h1.header {
 	transform-origin: 0 0;
 }
 
-
 .ss-style-doublediagonal-inverse::before,
 .ss-style-doublediagonal-inverse::after {
 	transform: rotate(2deg);
@@ -386,23 +593,238 @@ h1.header {
 	background: #fff;
 }
 
+@media(max-width: 1200px) {
+	/*.banner h1 {
+	font-size: 280px;
+}
+	.banner h3 {
+	font-size: 58px;
+	margin-left: -350px;
+	margin-top: 100px;
+}*/
+	h1.header {
+		font-size: 120px;
+		line-height: 10px;
+	}
+	h3.header {
+		font-size: 34px;
+	}
+	.navbar .white-bg {
+		width: 10vw;
+	}
+	.nosotros .col-sm-4 img{
+		width: 400px;
+	}
+	.galeria .brown-overlay h1 {
+		font-size: 80px;
+	}
+	.galeria .brown-overlay h3 {
+		font-size: 26px;
+	}
+	.nosotros h1, #sonMariachi h1 {
+		margin-left: 0;
+		margin-right: 100px;
+	}
+	.nosotros h3, #sonMariachi h3 {
+		margin-left: 100px;
+	}
+	.galeria .main-header h3 {
+		margin-right: 0;
+		margin-left: 170px;
+	}
+}
+
 @media(max-width: 992px) {
+	h1.header {
+		font-size: 100px;
+		line-height: 10px;
+	}
+	h3.header {
+		font-size: 30px;
+	}
 	.navbar a {
-		font-size: 11.5px;
+		font-size: 11.2px;
+	}
+	.banner h1 {
+		font-size: 200px;
+		margin-top: 0;
+	}
+	.banner h3 {
+		font-size: 42px;
+		margin-left: -250px;
+		margin-top: 70px;
+	}
+	.restaurantes .banner .header {
+		font-size: 150px;
+	}
+	.restaurantes .banner .caption-img {
+		height: 150px;
+	}
+	.navbar .white-bg {
+		display: none;
+	}
+	.navbar-collapse {
+		margin-right: -15px!important;
+	}
+	.galeria .brown-overlay h1 {
+		font-size: 62px;
+	}
+	.galeria .brown-overlay h3 {
+		font-size: 22px;
+	}
+	.nosotros h1, #sonMariachi h1 {
+		margin-right: 80px;
+	}
+	.nosotros h3, #sonMariachi h3 {
+		margin-left: 80px;
+	}
+	.galeria .main-header h3 {
+		margin-left: 130px;
+	}
+	.about h1 {
+		margin-right: 35px;
+	}
+	.about h3 {
+		margin-left: 75px;
 	}
 }
 
 @media(max-width: 767px) {
+	.spacing {
+		padding-top: 75px;
+		padding-bottom: 50px;
+	}
+	h1.header {
+		font-size: 100px;
+		line-height: 10px!important;
+	}
+	h3.header {
+		font-size: 30px;
+	}
+	.navbar {
+		background: transparent;
+	}
+	.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+		background-color: #643311!important;
+	}
 	.navbar-brand {
 		position: relative;
 		height: 50px;
 		padding-top: 0;
 	}
 	.navbar .overlay {
-		height: 50px;
+		/*height: 50px;*/
 	}
 	.navbar-brand img {
 		height: 48px;
 		padding-top: 1px;
+	}
+	.navbar-header {
+		background-color: #613211;
+	}
+	.navbar-collapse {
+		float: right;
+		width: 200px;
+		padding: 0;
+		background-color: #673512;
+		border: 0;
+	}
+	.navbar-nav {
+		padding: 0;
+	}
+	.navbar-nav>li {
+		height: 50px;
+		max-width: none;
+		text-align: right;
+		display: inline-block;
+		width: 100%;
+	}
+	.navbar-nav>li>a {
+		line-height: 50px;
+		height: auto;
+		transform: none;
+		padding: 0 15px;
+		top: 0;
+	}
+	.banner h1 {
+		font-size: 140px;
+	}
+	.banner h3 {
+		font-size: 28px;
+		margin-left: -150px;
+		margin-top: 40px;
+	}
+	.restaurantes .banner .header {
+		font-size: 100px;
+		line-height: normal!important;
+	}
+	.restaurantes .banner .caption-img {
+		height: 100px;
+		margin-bottom: -40px;
+	}
+	.galeria .main-header h3 {
+		margin-right: 0;
+		margin-left: 130px;
+	}
+	.galeria .brown-overlay, .galeria .overlay {
+		max-width: 588px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+	.galeria .brown-overlay h1 {
+		font-size: 20vw;
+	}
+	.galeria .brown-overlay h3 {
+		font-size: 5vw;
+	}
+	.contacto .col-sm-6 {
+		padding: 0!important;
+	}
+	.marcas {
+		height: auto;
+		padding: 30px 15px;
+	}
+	.marcas .col-sm-2 {
+		height: auto;
+	}
+	.marcas img {
+		margin-bottom: 15px;
+		transform: none;
+	}
+}
+
+@media(max-width: 480px) {
+	h1.header {
+		font-size: 60px;
+		line-height: 10px;
+	}
+	h3.header {
+		font-size: 20px;
+		margin: 0;
+	}
+	.banner h1 {
+		font-size: 100px;
+	}
+	.banner h3 {
+		font-size: 21px;
+		margin-left: -120px;
+		margin-top: 30px;
+	}
+	.restaurantes .banner .header {
+		font-size: 70px;
+	}
+	.restaurantes .banner .caption-img {
+		height: 70px;
+		margin-bottom: -30px;
+	}
+	.nosotros h1, #sonMariachi h1 {
+		margin-right: 55px;
+	}
+	.nosotros h3, #sonMariachi h3 {
+		margin-left: 55px;
+	}
+	.galeria .main-header h3 {
+		margin-left: 70px;
 	}
 }

@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<!--<link rel="stylesheet" href="css/jquery.fullPage.css">-->
 		<link rel="stylesheet" href="css/header/component.css">
+		<link rel="stylesheet" href="css/lightgallery.min.css">
 		<link rel="stylesheet" href="css/style.css">
 		<script src="js/jquery-1.12.0.min.js"></script>
 		<!--<script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
@@ -15,3 +16,4 @@
 		<!--<script src="js/modernizr.custom.js"></script>-->
 	</head>
 	<body>
+		<div class="big-wrapper">

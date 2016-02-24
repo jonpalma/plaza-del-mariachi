@@ -73,7 +73,7 @@ section p {
 
 .ha-header-perspective {
 	width: 100%;
-	height: 100%;
+	height: 96px;
 	position: relative;
 	-webkit-perspective: 1100px;
 	-moz-perspective: 1100px;
@@ -223,7 +223,7 @@ section p {
 }
 
 .ha-header-small {
-	height: 220px;
+	height: 96px;
 }
 
 .ha-header-hide {
@@ -231,6 +231,7 @@ section p {
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	transform: translateY(-50%);
+	z-index: -10;
 }
 
 .ha-header-show {
@@ -442,6 +443,12 @@ section p {
 
 	.ha-header nav {
 		/*font-size: 60%;*/
+	}
+}
+
+@media(max-width: 767px) {
+	.ha-header-small, .ha-header-perspective {
+		height: 50px;
 	}
 }
 
