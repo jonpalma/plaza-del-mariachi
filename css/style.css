@@ -173,7 +173,7 @@ h1.header-line-height {
 	background-color: #ca9a7c;
 }
 .navbar-nav>li:hover:before {
-	content: '';
+	/*content: '';
 	position: absolute;
 	background: url(../img/restaurantes/galeria/overlay.png) no-repeat;
 	z-index: 0;
@@ -181,7 +181,7 @@ h1.header-line-height {
 	left: 0;
 	height: 100%;
 	width: 100%;
-	opacity: .3;
+	opacity: .3;*/
 }
 
 .navbar-nav>li>a {
