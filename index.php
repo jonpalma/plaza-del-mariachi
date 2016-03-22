@@ -1,7 +1,6 @@
-<?php include('header.php'); ?>
 <?php $page = 'index'; ?>
-<?php include('navbar.php'); ?>
-<section class="ha-waypoint" data-animate-down="ha-header-hide" data-animate-up="ha-header-small">
+<?php include('header.php'); ?>
+<section class="ha-waypoint" data-animate-down="ha-header-small" data-animate-up="ha-header-hide">
 	<div class="section">
 		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
@@ -10,14 +9,30 @@
 		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 		<div class="intro" id="inicio">
 			<div class="banner">
-				<div class="caption reveal">
-					<h1 class="header vertical-align">El mejor</h1>
-					<h3 class="header white vertical-align">son del mariachi</h3>
+				<div class="caption reveal main" id="main-reveal">
+					<!--<h1 class="header vertical-align">El mejor</h1><h3 class="header white vertical-align">son del mariachi</h3>-->
+					<img class="vertical-align" src="img/banner/logo.png" alt="Plaza del Mariachi">
 				</div>
-				<div class="reveal-left">
-					<img src="img/banner/marichi2.png" alt="Mariachi">
+				<div class="banner-img">
+					<img src="img/banner/marichi2.jpg" alt="Mariachi">
+				</div>
+				<div class="banner-bg">
+					<img src="img/banner/bg2.jpg" alt="Mariachis">
+				</div>
+				<div class="banner-caption vertical-align">
+					<h1 class="header">Un buen tequila</h1>
+					<h3 class="header white">al mejor son del mariachi</h3>
 				</div>
 				<img class="chevron-down scroll-nosotros" src="img/banner/chevron-down.png" alt="Down">
+				<!-- Controls -->
+				<a class="left carousel-control" href="" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
 				<div class="overlay"/>
 			</div>
 		</div>
@@ -30,22 +45,50 @@
 		<!--/* NOSOTROS  */-->
 
 		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-		<section class="ha-waypoint" data-animate-down="ha-header-small" data-animate-up="ha-header-hide">
-			<div class="nosotros spacing" id="nosotros">
-				<div class="container">
-					<div class="col-sm-8 text-center cbp-so-side">
-						<h1 class="header">Ven</h1>
-						<h3 class="header brown">y conócenos</h3>
-						<p class="text text-justify">Atractivo complejo de entretenimiento con 20 diferentes propuestas de restaurantes, bares y tiendas donde la comunidad Chihuahuense y el turismo que visita nuestro Estado podrá disfrutar de mariachis, tríos y músicos.</p>
-					</div>
-					<div class="col-sm-4 hidden-xs">
-						<div class="reveal-right">
-							<img src="img/fade/mariachi.png" alt="Mariachi">
-						</div>
-					</div>
+		<!--<div class="nosotros spacing" id="nosotros">
+<div class="container">
+<div class="col-sm-8 text-center cbp-so-side">
+<h1 class="header">Ven</h1>
+<h3 class="header brown">y conócenos</h3>
+<p class="text text-justify">
+La Plaza del Mariachi como parte fundamental del Centro histórico de la ciudad de Chihuahua tiene como objetivo principal la promoción, la difusión y el desarrollo de un complejo restaurantero con un gran interés por la auténtica gastronomía regional y nacional bajo un concepto tradicional que enmarca la esencia cultural de Chihuahua. Todo con la finalidad de dar a conocer a la comunidad y al turismo un ambiente mexicano que expone los sentidos a los sabores y sonidos más típicos de nuestro estado; en un entorno familiar y recreativo ofreciéndonos la oportunidad de disfrutar la típica comida mexicana y un buen tequila al mejor son del mariachi.
+<br><br>
+La Plaza del Mariachi es única en su arquitectura. Su entrada asemeja los antiguos acueductos de nuestra ciudad; rodeada de columnas empedradas con un fuerte toque de hacienda tradicional y grandes áreas verdes con encinos de diferentes colores. Situado en la el centro histórico de Chihuahua. 
+</p>
+<div class="col-sm-4">
+<img src="img/nosotros/hot.png" alt="Restaurantes">
+<p class="brown">Restaurantes</p>
+</div>
+<div class="col-sm-4">
+<img src="img/nosotros/drink.png" alt="Bares">
+<p class="brown">Bares</p>
+</div>
+<div class="col-sm-4">
+<img src="img/nosotros/evets.png" alt="Eventos">
+<p class="brown">Eventos especiales</p>
+</div>
+</div>
+<div class="col-sm-4 hidden-xs"></div>
+<div class="reveal-right hidden-xs">
+<img class="fade-img" src="img/fade/mariachi.png" alt="Mariachi">
+</div>
+</div>
+</div>-->
+		<div class="nosotros spacing" id="nosotros">
+			<div class="container">
+				<div class="col-sm-6 text-center cbp-so-side">
+					<h1 class="header">Ven</h1>
+					<h3 class="header brown">y conócenos</h3>
+					<p class="text text-justify">
+						La Plaza del Mariachi como parte fundamental del Centro histórico de la ciudad de Chihuahua tiene como objetivo principal la promoción, la difusión y el desarrollo de un complejo restaurantero con un gran interés por la auténtica gastronomía regional y nacional bajo un concepto tradicional que enmarca la esencia cultural de Chihuahua. Todo con la finalidad de dar a conocer a la comunidad y al turismo un ambiente mexicano que expone los sentidos a los sabores y sonidos más típicos de nuestro estado; en un entorno familiar y recreativo ofreciéndonos la oportunidad de disfrutar la típica comida mexicana y un buen tequila al mejor son del mariachi.
+					</p>
+				</div>
+				<div class="col-sm-6 hidden-xs"></div>
+				<div class="reveal-right hidden-xs">
+					<img src="img/nosotros/1-a.jpg">
 				</div>
 			</div>
-		</section>
+		</div>
 		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 		<!--/* PARALLAX  */-->
@@ -66,10 +109,15 @@
 
 		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 		<div class="galeria ss-style-doublediagonal spacing" id="galeria">
-			<div class="ext-center" id="lightgallery">
-				<div class="main-header">
-					<h1 class="header">Conoce</h1>
-					<h3 class="header brown">la plaza</h3>
+			<div class="text-center" id="lightgallery">
+				<div class="container">
+					<div class="main-header">
+						<h1 class="header">Conoce</h1>
+						<h3 class="header brown">la plaza</h3>
+					</div>
+					<p class="text text-justify">
+						La Plaza del Mariachi es única en su arquitectura. Su entrada asemeja los antiguos acueductos de nuestra ciudad; rodeada de columnas empedradas con un fuerte toque de hacienda tradicional y grandes áreas verdes con encinos de diferentes colores. Situado en la el centro histórico de Chihuahua. 
+					</p>
 				</div>
 				<div class="row no-margin">
 					<div class="col-sm-4">
@@ -145,6 +193,16 @@
 		</div>
 		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
+		<!--/* MAPA  */-->
+
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div class="container spacing no-padding-bottom text-center" id="ubicacion">
+			<h1 class="header header-line-height">Ubicación</h1>
+			<h3 class="header brown">Para tu comodidad contamos con Valet Parking</h3>
+		</div>
+		<div class="googleMap ss-style-doublediagonal ss-style-doublediagonal-inverse" id="googleMap" position="plaza"></div>
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 		<!--/* CONTÁCTANOS  */-->
 
 		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -154,7 +212,7 @@
 			<div class="container text-center">
 				<h1 class="header header-line-height">Contáctanos</h1>
 				<h3 class="header brown">¿cómo podemos ayudarte?</h3>
-				<p class="text">Centro Histórico, Chihuahua, Chih. México</p>
+				<p class="text">Centro Histórico, Chihuahua, Chih. México<br>De Lunes a Sábado de 8:00 a.m. a 2 a.m. y Domingos 9:00 a.m a 12:00 p.m.</p>
 				<div class="row no-margin">
 					<div class="col-sm-6 no-padding">
 						<input type="text" name="name" id="name" placeholder="Nombre">
@@ -169,12 +227,6 @@
 				</div>
 			</div>
 		</div>
-		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-		<!--/* MAPA  */-->
-
-		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-		<div class="googleMap ss-style-doublediagonal ss-style-doublediagonal-inverse" id="googleMap" position="plaza"></div>
 	</div>
 </div>
 <?php include('footer.php'); ?>

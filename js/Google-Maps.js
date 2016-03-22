@@ -22,9 +22,15 @@ function initialize() {
 
 	map = new google.maps.Map(map_canvas, map_options);
 
-	var markerChihuahua = new google.maps.Marker({
+	var marker = new google.maps.Marker({
 		position: new google.maps.LatLng($lat, $long),
 		map: map,
-		title: $title
+		title: $title,
+		url: 'http://maps.google.com/maps?q=loc:'+String($lat)+','+String($long)
+	});
+	
+	google.maps.event.addListener(marker, 'click', function() {
+		/*window.location.href = this.url;*/
+		window.open(this.url,'_blank');
 	});
 }

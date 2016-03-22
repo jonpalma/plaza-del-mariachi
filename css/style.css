@@ -22,6 +22,7 @@ body {
 .big-wrapper {
 	overflow-x: hidden;
 	width: 100vw;
+	margin-top: 96px;
 }
 
 .wrapper {
@@ -44,6 +45,10 @@ textarea {
 
 .spacing {
 	padding: 100px 15px;
+}
+
+.no-padding-bottom {
+	padding-bottom: 0;
 }
 
 .vertical-align {
@@ -100,12 +105,29 @@ h1.header-line-height {
 	color: #fff!important;
 }
 
+.brown-btn {
+	background-color: #ca9a7c;
+}
+
+.brown-btn:hover {
+	background-color: #b1876d;
+}
+
 .scroll-nosotros:hover {
 	cursor: pointer;
 }
 
 .lg-backdrop.in, .lg-outer {
 	width: 100vw;
+}
+
+/* NO REVEAL FLICKERING */
+div[class^='reveal-'], .reveal {
+	visibility: hidden;
+}
+
+.carousel-control {
+	z-index: 100;
 }
 /*** GENERAL STYLES ***/
 
@@ -120,7 +142,6 @@ h1.header-line-height {
 	/*opacity: 0;
 	transition: all 0.5s ease;*/
 	border-radius: 0;
-	position: relative;
 }
 
 .navbar .white-bg {
@@ -149,15 +170,15 @@ h1.header-line-height {
 }
 
 .navbar-nav {
-	padding-left: 132px;
+	padding-left: 147px;
 	float: none;
 	margin: 0!important;
 	padding-right: 0;
 }
 
 .navbar-nav>li {
-	float: none;
 	display: inline-block;
+	width: calc(100% / 7);
 	height: 96px;
 	z-index: 1;
 	/*width: 100%;*/
@@ -186,9 +207,8 @@ h1.header-line-height {
 
 .navbar-nav>li>a {
 	color: #ffffff!important;
-	height: 100%;
-	line-height: 62px;
 	font-family: 'PT Serif', sans-serif;
+	line-height: normal;
 }
 
 .navbar-toggle {
@@ -212,9 +232,10 @@ h1.header-line-height {
 	/*background: url(../img/banner/bg.png);*/
 	background-color: #000;
 	display: block;
-	height: 100vh;
+	/*height: 100vh;*/
 	overflow: hidden;
 	position: relative;
+	max-height: calc(100vh - 96px);
 }
 
 .banner .overlay {
@@ -227,8 +248,37 @@ h1.header-line-height {
 	opacity: .35;
 }
 
-.banner img {
-	height: 100vh;
+.banner-img {
+	position: relative;
+	z-index: 0;
+}
+
+.banner-img img {
+	max-height: 100vh;
+	max-width: 70vw;
+	bottom: 0;
+}
+
+.banner-bg {
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	width: 100%;
+	display: none;
+}
+
+.banner-bg img {
+	min-width: 100%;
+	/*max-height: 100vh;*/
+}
+
+.banner-caption {
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	display: none;
+	z-index: 10;
 }
 
 .banner .chevron-down {
@@ -241,37 +291,45 @@ h1.header-line-height {
 
 .banner .caption {
 	position: absolute;
-	top: calc(50% - 176px);
-	height: 352px;
-	left: 0;
-	right: 0;
-	text-align: center;
-	z-index: 1;
+	z-index: 10;
+	height: 100%;
+	width: 100%;
 }
 
-.banner h1 {
-	font-size: 18vw;
-	line-height: 10px;
+.banner .caption.main img {
+	height: auto;
+	max-width: 40vw;
+	right: 8vw;
+	position: absolute;
+	margin-top: -2%;
+}
+
+.banner .banner-caption {
+	font-size: 14vw!important;
+	line-height: 5vw!important;
 }
 
 .banner h3 {
 	font-family: 'Playfair Display', sans-serif;
+	font-size: 3vw!important;
 	font-weight: 400;
-	font-size: 4vw;
-	margin-left: -23vw;
-	margin-top: 7vw;
-	text-shadow: 1px 1px rgba(0,0,0,.2),
-		-1px -1px rgba(0,0,0,.2),
-		-1px 1px rgba(0,0,0,.2),
-		1px -1px rgba(0,0,0,.2);
+	margin-left: -5vw;
+	/*text-shadow: 1px 1px rgba(0,0,0,.2),
+	-1px -1px rgba(0,0,0,.2),
+	-1px 1px rgba(0,0,0,.2),
+	1px -1px rgba(0,0,0,.2);*/
 }
 /*** BANNER **/
 
 /*** NOSOTROS ***/
 .nosotros {
-	padding-top: 196px;
 	overflow: hidden;
 	position: relative;
+	padding-top: 196px;
+}
+
+.nosotros h1.header {
+	/*line-height: normal!important;*/
 }
 
 .nosotros h1 {
@@ -286,11 +344,45 @@ h1.header-line-height {
 	z-index: 1;
 }
 
-.nosotros .col-sm-4 img{
-	position: absolute;
-	margin-top: -202px;
-	width: 40vw;
-	z-index: -1;
+.nosotros .col-sm-8:first-child .col-sm-4 {
+	padding: 0;
+}
+
+.nosotros .col-sm-8:first-child .col-sm-4 p {
+	font-weight: 700;
+	font-size: 20px;
+	font-family: PTSerif;
+	line-height: normal;;
+}
+
+.nosotros .col-sm-8:first-child img {
+	width: auto;
+}
+
+/*
+.nosotros .reveal-right {
+position: absolute;
+top: 0;
+right: 0;
+height: 100%;
+width: 100%;
+}
+
+.nosotros .reveal-right img {
+max-width: 35vw;
+position: absolute;
+top: 0;
+right: 0;
+}*/
+
+.nosotros .reveal-right {
+	/*overflow: hidden;
+	width: 45vw!important;
+	left: 60vw!important;*/
+}
+
+.nosotros .reveal-right img {
+	/*margin-left: -100%;*/
 }
 /*** NOSOTROS ***/
 
@@ -430,22 +522,36 @@ background: url(../img/banner/overlay.png) no-repeat;
 	background: url(../img/banner/restaurantes.jpg) no-repeat center center;
 	background-size: cover;
 	background-position: top;
+	height: 100vh;
 }
 
+.noticias .caption,
 .restaurantes .caption {
 	height: 50vh;
-	top: 25vh;
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 1;
+	height: 100vh;
+	max-height: calc(100vh - 96px);
 }
 
 .restaurantes .banner .caption-img {
 	width: auto;
 	height: auto;
 	margin-bottom: -50px;
+	right: auto;
 }
 
+.noticias .banner h1.header,
+.restaurantes .banner h1.header {
+	line-height: .9!important;
+}
+
+.noticias .banner .header,
 .restaurantes .banner .header {
-	line-height: normal;
-	font-size: 200px;
+	font-size: 180px;
 	margin-top: 20px!important;
 }
 /*** BANNER ***/
@@ -454,24 +560,46 @@ background: url(../img/banner/overlay.png) no-repeat;
 .about {
 	overflow: hidden;
 	position: relative;
+	padding-top: 196px;
 }
 
-.about .reveal-right {
+.about h1.header {
+	/*line-height: normal!important;*/
+}
+
+.about .reveal-right, .nosotros .reveal-right {
 	position: absolute;
-	width: 50vw;
+	height: 100%;
+	width: 100%;
 	right: 0;
-	bottom: -25px;
+	top: 0;
+	z-index: -1;
 }
 
-.about img {
-	min-width: 100%;
+.about .reveal-right img, .nosotros .reveal-right img {
+	min-width: 50vw;
+	min-height: 100%;
+	position: absolute;
+	left: 50%;
 }
 
 .about h1 {
 	margin-right: 60px;
 }
+
 .about h3 {
 	margin-left: 100px;
+}
+
+.restaurantes .parallax-container {
+	min-height: 350px;
+	position: relative;
+}
+
+.restaurantes .parallax-container .vertical-align {
+	position: absolute;
+	right: 0;
+	left: 0;
 }
 /*** NUESTROS RESTAURANTES ***/
 
@@ -479,8 +607,9 @@ background: url(../img/banner/overlay.png) no-repeat;
 .marcas {
 	background-color: rgba(228, 159, 115, 0.77);
 }
+
 .marcas .col-sm-2 {
-	height: 160px;
+	height: 150px;
 	text-align: center;
 }
 /*** MARCAS ***/
@@ -496,9 +625,110 @@ background: url(../img/banner/overlay.png) no-repeat;
 /*** GALERÍA ***/
 /*** RESTURANTES ***/
 
+/*** NOTICIAS ***/
+.noticias .banner {
+	background: url(../img/banner/noticias.jpg) no-repeat center center;
+	background-size: cover;
+	background-position: top;
+	height: 100vh;
+}
+
+.news.spacing {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.news .col-sm-6 {
+	padding: 0 10px;
+	padding-bottom: 15px;
+}
+
+.news h3 {
+	margin: 0;
+}
+
+.news .date {
+	position: absolute; 
+	top: 15px;
+	background-color: #ca9a7c;
+	width: 100px;
+	padding: 15px 0;
+}
+
+.noticias h3 {
+	font-size: 36px;
+}
+
+.news .img-container {
+	text-align: center;
+	max-width: 303px;
+	max-height: 373px;
+	margin: 0 auto;
+	padding: 0;
+	overflow: hidden;
+}
+
+.news .date h3 {
+	font-size: 24px;
+}
+
+.news .date h3:first-line {
+	font-size: 36px;
+}
+
+.news a {
+	height: 52px;
+	width: 123px;
+	text-decoration: none!important;
+	outline: none!important;
+	display: inline-block;
+	text-align: center;
+	line-height: 52px;
+}
+
+.noticia {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.noticia .main {
+	margin-bottom: 15px;
+}
+
+.noticia div[class^=col] {
+	padding-bottom: 20px;
+}
+
+.noticia .news-title {
+	margin: 0;
+	font-family: Raleway;
+	font-weight: 400;
+	font-style: italic;
+	color: #696969;
+	border-bottom: 2px solid #b40931;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.noticia p {
+	line-height: 21px;
+}
+
+.noticia a {
+	color: #b40931!important;
+	font-size: 18px;
+}
+
+.noticias .related .header {
+	font-size: 26px;
+	padding: 15px 0;
+}
+/*** NOTICIAS ***/
+
 /*** FOOTER ***/
 .footer-top {
 	height: 310px;
+	border-top: 1px solid #e3e3e3;
 }
 
 .footer-top img {
@@ -612,9 +842,6 @@ background: url(../img/banner/overlay.png) no-repeat;
 	.navbar .white-bg {
 		width: 10vw;
 	}
-	.nosotros .col-sm-4 img{
-		width: 400px;
-	}
 	.galeria .brown-overlay h1 {
 		font-size: 80px;
 	}
@@ -628,9 +855,27 @@ background: url(../img/banner/overlay.png) no-repeat;
 	.nosotros h3, #sonMariachi h3 {
 		margin-left: 100px;
 	}
+	/*.nosotros .reveal-right img {
+	right: -75px;
+}
+	.nosotros .reveal-right img {
+	height: 100%;
+	max-width: none;
+}*/
 	.galeria .main-header h3 {
 		margin-right: 0;
 		margin-left: 170px;
+	}
+	.about .reveal-right {
+
+	}
+	.about .reveal-right img, .nosotros .reveal-right img {
+		min-width: 0;
+		height: 100%!important;
+	}
+	.noticias .banner .header,
+	.restaurantes .banner .header {
+		font-size: 150px;
 	}
 }
 
@@ -645,17 +890,18 @@ background: url(../img/banner/overlay.png) no-repeat;
 	.navbar a {
 		font-size: 11.2px;
 	}
-	.banner h1 {
-		font-size: 200px;
-		margin-top: 0;
-	}
+	/*.banner h1 {
+	font-size: 200px;
+	margin-top: 0;
+}
 	.banner h3 {
-		font-size: 42px;
-		margin-left: -250px;
-		margin-top: 70px;
-	}
+	font-size: 42px;
+	margin-left: -250px;
+	margin-top: 70px;
+}*/
+	.noticias .banner .header,
 	.restaurantes .banner .header {
-		font-size: 150px;
+		font-size: 120px;
 	}
 	.restaurantes .banner .caption-img {
 		height: 150px;
@@ -678,6 +924,9 @@ background: url(../img/banner/overlay.png) no-repeat;
 	.nosotros h3, #sonMariachi h3 {
 		margin-left: 80px;
 	}
+	/*.nosotros .reveal-right img {
+	right: -160px;
+}*/
 	.galeria .main-header h3 {
 		margin-left: 130px;
 	}
@@ -690,6 +939,9 @@ background: url(../img/banner/overlay.png) no-repeat;
 }
 
 @media(max-width: 767px) {
+	.big-wrapper {
+		margin-top: 50px;
+	}
 	.spacing {
 		padding-top: 75px;
 		padding-bottom: 50px;
@@ -733,29 +985,32 @@ background: url(../img/banner/overlay.png) no-repeat;
 		padding: 0;
 	}
 	.navbar-nav>li {
-		height: 50px;
+		height: auto;
 		max-width: none;
 		text-align: right;
 		display: inline-block;
 		width: 100%;
 	}
 	.navbar-nav>li>a {
-		line-height: 50px;
 		height: auto;
 		transform: none;
-		padding: 0 15px;
+		padding: 15px;
 		top: 0;
 	}
-	.banner h1 {
-		font-size: 140px;
+	.banner {
+		max-height: calc(100vh - 50px);
 	}
+	/*.banner h1 {
+	font-size: 140px;
+}
 	.banner h3 {
-		font-size: 28px;
-		margin-left: -150px;
-		margin-top: 40px;
-	}
+	font-size: 28px;
+	margin-left: -150px;
+	margin-top: 40px;
+}*/
+	.noticias .banner .header,
 	.restaurantes .banner .header {
-		font-size: 100px;
+		font-size: 80px;
 		line-height: normal!important;
 	}
 	.restaurantes .banner .caption-img {
@@ -785,12 +1040,12 @@ background: url(../img/banner/overlay.png) no-repeat;
 		height: auto;
 		padding: 30px 15px;
 	}
-	.marcas .col-sm-2 {
-		height: auto;
+	.news .news-title {
+		text-align: center;
+		margin: 10px 0;
 	}
-	.marcas img {
-		margin-bottom: 15px;
-		transform: none;
+	.news .text-right {
+		text-align: center;
 	}
 }
 
@@ -800,19 +1055,25 @@ background: url(../img/banner/overlay.png) no-repeat;
 		line-height: 10px;
 	}
 	h3.header {
-		font-size: 20px;
+		font-size: 20px!important;
 		margin: 0;
 	}
-	.banner h1 {
-		font-size: 100px;
-	}
+	/*.banner h1 {
+	font-size: 100px;
+}
 	.banner h3 {
-		font-size: 21px;
-		margin-left: -120px;
-		margin-top: 30px;
+	font-size: 21px;
+	margin-left: -120px;
+	margin-top: 30px;
+}*/
+	.banner .chevron-down {
+		margin-left: calc( 50% - 25px );
+		height: 50px;
+		bottom: 10px;
 	}
+	.noticias .banner .header,
 	.restaurantes .banner .header {
-		font-size: 70px;
+		font-size: 60px;
 	}
 	.restaurantes .banner .caption-img {
 		height: 70px;
