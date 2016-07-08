@@ -117,9 +117,10 @@ $(window).scroll(function() {
 	PAGE LOAD WITH HASH OFFSET 
 */
 (function($, window) {
+	$navbar_height = $('.navbar').height();
 	var adjustAnchor= function() {
 		var $anchor = $(':target'),
-			fixedElementHeight = 96;
+			fixedElementHeight = $navbar_height;
 		if ($anchor.length > 0) {
 			$('html, body')
 				.stop()
@@ -131,4 +132,4 @@ $(window).scroll(function() {
 	$(window).on('hashchange load', function() {
 		adjustAnchor();
 	});
-})(jQuery, window);
+})(jQuery, window)
